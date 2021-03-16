@@ -1,16 +1,36 @@
 import React from 'react';
 
-// let hornedBeastsArr = [];
-const imgUrl = "https://camo.githubusercontent.com/313886fb1e0a318052eb1a6fdc42aa54d0fb5324e68bc56a15074799f1fb6bab/68747470733a2f2f696d616765732e756e73706c6173682e636f6d2f70686f746f2d313439303733393034333931332d3233396236636466343038343f697869643d4d5877784d6a4133664442384d48787761473930627931775957646c6648783866475675664442386648772533442669786c69623d72622d312e322e31266175746f3d666f726d6174266669743d63726f7026773d3134313026713d3830";
+const hornedBeastsArr = [
+  {
+    'image_url': 'http://3.bp.blogspot.com/_DBYF1AdFaHw/TE-f0cDQ24I/AAAAAAAACZg/l-FdTZ6M7z8/s1600/Unicorn_and_Narwhal_by_dinglehopper.jpg',
+    'title': 'UniWhal',
+    'description': 'A unicorn and a narwhal nuzzling their horns',
+    'keyword': 'narwhal',
+    'horns': 1
+  },
+
+  {
+    'image_url': 'https://images.unsplash.com/photo-1512636618879-bbe79107e9e3?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=bd9460ee6d1ddbb6b1ca7be86dfc4590&auto=format&fit=crop&w=1825&q=80',
+    'title': 'Rhino Family',
+    'description': 'Mother (or father) rhino with two babies',
+    'keyword': 'rhino',
+    'horns': 2
+  },
+
+  {
+    'image_url': 'https://www.dhresource.com/0x0s/f2-albu-g5-M00-1A-11-rBVaI1hsIIiALxKzAAIHjSU3VkE490.jpg/wholesale-halloween-costume-prop-unicorn.jpg',
+    'title': 'Unicorn Head',
+    'description': 'Someone wearing a creepy unicorn head mask',
+    'keyword': 'unicorn',
+    'horns': 1
+  }];
 
 class Main extends React.Component {
-  
+
   render() {
     return(
-      <section id="main">
-        <ul>
-          <HornedBeasts title={'Mountain Goat'} url={imgUrl} description={'Bahh'}/>
-        </ul>
+      <section id='main'>
+        <HornedBeasts/>
       </section>
     );
   }
@@ -18,14 +38,19 @@ class Main extends React.Component {
 
 class HornedBeasts extends React.Component {
   render() {
-    return(
-      <article id="main">
-        <li>
-          <h3>{this.props.title}</h3>
-          <img src={this.props.url} alt={this.props.description} title={this.props.title}/>
-          <p>{this.props.description}</p>
-        </li>
-      </article>
+
+    const beasts = hornedBeastsArr.map((beast) =>
+      <li>
+        <h3>{beast.title}</h3>
+        <img src={beast.image_url} alt={beast.description} title={beast.title}/>
+        <p>{beast.description}</p>
+      </li>
+    );
+
+    return (
+      <ul>
+        {beasts}
+      </ul>
     );
   }
 }
