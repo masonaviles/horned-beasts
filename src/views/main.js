@@ -39,13 +39,22 @@ class Main extends React.Component {
 class HornedBeasts extends React.Component {
   render() {
 
-    const beasts = hornedBeastsArr.map((beast) =>
+    // const beasts = hornedBeastsArr.map((beast) =>
+    //   <li>
+    //     <h3>{beast.title}</h3>
+    //     <img src={beast.image_url} alt={beast.description} title={beast.title}/>
+    //     <p>{beast.description}</p>
+    //   </li>
+    // );
+
+    const beasts = [];
+    hornedBeastsArr.forEach((beast) => beasts.push (
       <li>
         <h3>{beast.title}</h3>
         <img src={beast.image_url} alt={beast.description} title={beast.title}/>
         <p>{beast.description}</p>
       </li>
-    );
+    ));
 
     return (
       <ul>
