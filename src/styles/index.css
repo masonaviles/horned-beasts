@@ -17,7 +17,7 @@ code {
   display: block;
 }
 
-main {
+main, footer {
   display: flex;
   flex-direction: column;
   flex-wrap: nowrap;
@@ -44,4 +44,8 @@ main {
 .heart .btn-link:active {
   outline: none !important;
   box-shadow: none;
+}
+
+footer {
+  
 }
