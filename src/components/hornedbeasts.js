@@ -3,17 +3,6 @@ import Data from '../data/data';
 import Heartlike from './heartlike';
 
 class HornedBeasts extends React.Component {
-  state = {
-    numberOfLikes: 0,
-    selectedBeast: ''
-  }
-
-  likeBeast = () => {
-    this.setState( prevState => ({
-      numberOfLikes: prevState.numberOfLikes + 1
-    }));
-  }
-
   render() {
     const beasts = Data.map((beast, index) =>
       <div key={index}>
