@@ -1,16 +1,21 @@
 import React from 'react';
+import Card from 'react-bootstrap/Card'
+import Button from 'react-bootstrap/Button'
 import Data from '../data/data';
 import Heartlike from './heartlike';
 
 class HornedBeasts extends React.Component {
   render() {
-    const beasts = Data.map((beast, index) =>
-      <div key={index}>
-        <h3>{beast.title}</h3>
-        <Heartlike />
-        <img src={beast.image_url} alt={beast.description} title={beast.title}/>
-        <p>{beast.description}</p>
-      </div>
+    const beasts = Data.map((beast) =>
+      <Card style={{ width: '18rem' }}>
+        <Card.Img variant="top" src={beast.image_url}  alt={beast.description} title={beast.title}/>
+        <Card.Body>
+          <Card.Title>{beast.title}</Card.Title><Heartlike />
+          <Card.Text>
+            {beast.description}
+          </Card.Text>
+        </Card.Body>
+      </Card>
     );
     return (
       <div className="beasts-container">

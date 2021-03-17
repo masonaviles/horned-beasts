@@ -13,7 +13,7 @@ code {
 }
 
 .wrapper {
-  width: 1000px;
+  width: auto;
   display: block;
 }
 
@@ -23,4 +23,25 @@ main {
   flex-wrap: nowrap;
   justify-content: center;
   align-items: center;
+}
+
+.beasts-container {
+  display: grid;
+  grid-template-columns: repeat(4, auto);
+}
+
+.card {
+  margin: 1rem;
+}
+
+.heart .btn-link {
+  text-decoration: none;
+  border: none;
+  background-color: none;
+}
+
+.heart .btn-link:focus,
+.heart .btn-link:active {
+  outline: none !important;
+  box-shadow: none;
 }

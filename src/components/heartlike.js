@@ -1,4 +1,5 @@
 import React from 'react';
+import Button from 'react-bootstrap/Button'
 
 class Heartlike extends React.Component {
   state = {
@@ -14,7 +15,7 @@ class Heartlike extends React.Component {
   render() {
     return (
       <div className="heart">
-        <button onClick={this.heartBeast}>❤️</button>
+        <Button variant="link" onClick={this.heartBeast}>❤️</Button>
         <span>{this.state.hearts}</span>
       </div>
     );
