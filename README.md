@@ -8,10 +8,10 @@ A Project for 301 Javascript @ CodeFellows
 
 (times include breaks, music listening, and common distractions lol)
 
-Number and name of feature: 02 Heart Button & Layout
-Estimate of time needed to complete: ~ 2 hrs
-Actual time needed to complete: ~ 2 hrs
+### Feature: 02 Heart Button & Layout
+- Estimate of time needed to complete: ~ 2 hrs
+- Actual time needed to complete: ~ 2 hrs
 
-Number and name of feature: 03 Modal & Card Layout
-Estimate of time needed to complete: ~ 1.5 hrs
-Actual time needed to complete: ~ 1.5 hrs
+### Feature: 03 Modal & Card Layout
+- Estimate of time needed to complete: ~ 1.5 hrs
+- Actual time needed to complete: ~ 1.5 hrs
