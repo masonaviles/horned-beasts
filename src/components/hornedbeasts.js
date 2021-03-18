@@ -1,40 +1,32 @@
 import React from 'react';
 import Card from 'react-bootstrap/Card'
 import Heartlike from './heartlike';
+import BeastModal from './beastModal';
 
 class HornedBeasts extends React.Component {
 
-  constructor(props){
-    super(props);
-    this.state={
-      favorites: 0
-    }
+  state = {
+    modalIsOpen: false
+  };
+
+  showModal = () => {
+    this.setState({modalIsOpen: true });
   }
 
-  addFavorite = () => {
-    this.setState({ favorites: this.state.favorites + 1 });
+  hideModal = () => {
+    this.setState({modalIsOpen: false });
   }
 
   render() {
-    // const beasts = Data.map((beast) =>
-    //   <Card style={{ width: '18rem' }}>
-    //     <Card.Img variant="top" src={beast.image_url}  alt={beast.description} title={beast.title}/>
-    //     <Card.Body>
-    //       <Card.Title>{beast.title}</Card.Title><Heartlike />
-    //       <Card.Text>
-    //         {beast.description}
-    //       </Card.Text>
-    //     </Card.Body>
-    //   </Card>
-    // );
     return (
       <div className="beasts-container">
-        <Card style={{ width: '18rem' }}>
-          <Card.Img variant="top" src={this.props.src}  alt={this.props.description} title={this.props.title}/>
+        <Card style={{ width: '18rem' }} onClick={this.addFavorite}>
+          <Card.Img variant="top" src={this.props.src}  alt={this.props.description} title={this.props.title} onClick={this.showModal}/>
           <Card.Body>
             <Card.Title>{this.props.title}</Card.Title><Heartlike />
             <Card.Text>
               {this.props.description}
+              <BeastModal />
             </Card.Text>
           </Card.Body>
         </Card>
