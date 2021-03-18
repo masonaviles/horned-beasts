@@ -1,5 +1,5 @@
 import React from 'react'
-import { Button,Modal } from 'react-bootstrap'
+import { Button, Modal, Card } from 'react-bootstrap'
 
 class BeastModal extends React.Component{
 
@@ -17,18 +17,18 @@ class BeastModal extends React.Component{
   render(){
     return(
       <div>
-        <Button variant="primary" onClick={() => this.handleModalShowHide()}>
-          Launch demo modal
-        </Button>
+        <Card.Img variant="top" src={this.props.src}  alt={this.props.description} title={this.props.title} onClick={() => this.handleModalShowHide()}/>
 
         <Modal show={this.state.showHide}>
           <Modal.Header closeButton onClick={() => this.handleModalShowHide()}>
-            <Modal.Title>Modal heading</Modal.Title>
+            <Modal.Title>{this.props.title}</Modal.Title>
           </Modal.Header>
-          <Modal.Body>Woohoo, you're reading this text in a modal!</Modal.Body>
+          <Modal.Body>
+            <img src={this.props.src} alt={this.props.description} title={this.props.title} width="100%"/>
+            <p>{this.props.description}</p>
+          </Modal.Body>
           <Modal.Footer>
             <Button variant="secondary" onClick={() => this.handleModalShowHide()}>Close</Button>
-            <Button variant="primary" onClick={() => this.handleModalShowHide()}>Save Changes</Button>
           </Modal.Footer>
         </Modal>
       </div>

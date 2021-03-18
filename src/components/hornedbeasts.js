@@ -9,12 +9,15 @@ class HornedBeasts extends React.Component {
     return (
       <div className="beasts-container">
         <Card style={{ width: '18rem' }} onClick={this.addFavorite}>
-          <Card.Img variant="top" src={this.props.src}  alt={this.props.description} title={this.props.title}/>
+          <BeastModal 
+            src = {this.props.src}
+            title = {this.props.title}
+            description = {this.props.description}
+          />
           <Card.Body>
             <Card.Title>{this.props.title}</Card.Title><Heartlike />
             <Card.Text>
               {this.props.description}
-              <BeastModal />
             </Card.Text>
           </Card.Body>
         </Card>
