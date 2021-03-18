@@ -8,7 +8,7 @@ class HornedBeasts extends React.Component {
   render() {
     return (
       <div className="beasts-container">
-        <Card style={{ width: '18rem' }} onClick={this.addFavorite}>
+        <Card style={{ width: '18rem' }}>
           <BeastModal 
             src = {this.props.src}
             title = {this.props.title}
