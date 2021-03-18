@@ -34,6 +34,10 @@ main, footer {
   margin: 1rem;
 }
 
+.card-deck {
+  justify-content: center;
+}
+
 .heart .btn-link {
   text-decoration: none;
   border: none;
