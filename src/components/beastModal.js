@@ -23,19 +23,14 @@ class BeastModal extends React.Component{
 
         <Modal show={this.state.showHide}>
           <Modal.Header closeButton onClick={() => this.handleModalShowHide()}>
-          <Modal.Title>Modal heading</Modal.Title>
+            <Modal.Title>Modal heading</Modal.Title>
           </Modal.Header>
           <Modal.Body>Woohoo, you're reading this text in a modal!</Modal.Body>
           <Modal.Footer>
-          <Button variant="secondary" onClick={() => this.handleModalShowHide()}>
-              Close
-          </Button>
-          <Button variant="primary" onClick={() => this.handleModalShowHide()}>
-              Save Changes
-          </Button>
+            <Button variant="secondary" onClick={() => this.handleModalShowHide()}>Close</Button>
+            <Button variant="primary" onClick={() => this.handleModalShowHide()}>Save Changes</Button>
           </Modal.Footer>
         </Modal>
-
       </div>
     )
   }
