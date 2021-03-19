@@ -13,12 +13,18 @@ class Main extends React.Component {
     }
   }
 
+
   render() {
     return(
       <main>
         <div id="wrapper">
         <FilterBar />
         <CardDeck>
+
+        {/* {const oneHorn = rawData.filter( beast => beast.horns === 1 );} */}
+        {/* {const twoHorns = rawData.filter( beast => beast.horns === 2 );}
+        {const threeHorns = rawData.filter( beast => beast.horns === 3 );} */}
+
         {rawData.map((beast, index) => (
           <div key={index}>
             <HornedBeasts 
