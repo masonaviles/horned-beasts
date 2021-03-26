@@ -1,16 +1,32 @@
 import React from 'react';
 import CardDeck from 'react-bootstrap/CardDeck'
-import FilterBar from '../components/filterBar';
 import HornedBeasts from '../components/hornedbeasts';
 import rawData from '../data/data';
+import FilterBar from '../components/filterBar';
 
 class Main extends React.Component {
 
   constructor(props){
     super(props);
     this.state={
-      gallery: rawData
+      gallery: rawData,
+      filteredHorns: rawData,
+      selectedHornValue: "All"
     }
+  }
+
+  updateHornValue = (e) => {
+    e.preventDefault();
+    this.setState({selectedHornValue: e.target.value});
+    
+    const filteredHorns = this.state.gallery.filter((beast) => {
+      if (e.target.value === "All") {
+        return beast;
+      } else {
+        return beast.horns === +e.target.value;
+      }
+    });
+    this.setState({filteredHorns});
   }
 
 
@@ -18,14 +34,12 @@ class Main extends React.Component {
     return(
       <main>
         <div id="wrapper">
-        <FilterBar />
+        <FilterBar 
+          updateHornValue={this.updateHornValue}
+        />
         <CardDeck>
 
-        {/* {const oneHorn = rawData.filter( beast => beast.horns === 1 );} */}
-        {/* {const twoHorns = rawData.filter( beast => beast.horns === 2 );}
-        {const threeHorns = rawData.filter( beast => beast.horns === 3 );} */}
-
-        {rawData.map((beast, index) => (
+        {this.state.filteredHorns.map((beast, index) => (
           <div key={index}>
             <HornedBeasts 
               src = {beast.image_url}
